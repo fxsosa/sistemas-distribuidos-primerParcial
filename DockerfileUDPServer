@@ -1,0 +1,9 @@
+FROM maven:3.8.6-eclipse-temurin-11-alpine
+
+WORKDIR /usr/src/Proyecto
+
+COPY Proyecto .
+
+RUN mvn clean install -U -f pom-UDPServer.xml
+RUN apk add iproute2
+RUN apk add tmux

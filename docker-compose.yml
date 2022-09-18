@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  client:
+    build: 
+      context: .
+      dockerfile: DockerfileUDPClient
+    command: /bin/sh -c "while sleep 1000; do :; done"
+  server:
+    build: 
+      context: .
+      dockerfile: DockerfileUDPServer
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    
